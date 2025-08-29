@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="contpaqi_stock_picking_form_inherit" model="ir.ui.view">
+            <field name="name">contpaqi.stock.picking.form.inherit</field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="stock.view_picking_form"/>
+            <field name="arch" type="xml">
+                <field name="picking_type_id" position="after">
+                    <field name="code_contpaqi"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="contpaqi_stock_picking_tree_inherit" model="ir.ui.view">
+            <field name="name">contpaqi.stock.picking.tree.inherit</field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="stock.vpicktree"/>
+            <field name="arch" type="xml">
+                <field name="picking_type_id" position="after">
+                    <field name="code_contpaqi" optional="show"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="contpaqi_stock_picking_type_form_inherit" model="ir.ui.view">
+            <field name="name">contpaqi.stock.picking.type.form.inherit</field>
+            <field name="model">stock.picking.type</field>
+            <field name="inherit_id" ref="stock.view_picking_type_form"/>
+            <field name="arch" type="xml">
+                <field name="show_operations" position="after">
+                    <field name="code_contpaqi"/>
+                </field>
+            </field>
+        </record>
+    </data>
+</odoo>
